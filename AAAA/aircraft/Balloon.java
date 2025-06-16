@@ -1,8 +1,14 @@
+package aircraft;
+import Aircraft;
+import Coordinates;
+import LogManager;
+import java.util.logging.LogManager;
 
 public class Balloon extends Aircraft{
     
     public Balloon(long p_id, String p_name, Coordinates p_coordinate) {
         super(p_id, p_name, p_coordinate);
+        this.setType("Balloon");
     }
 
     @Override

@@ -1,8 +1,10 @@
+package simulation.aircraft;
 
 public class Balloon extends Aircraft{
     
     public Balloon(long p_id, String p_name, Coordinates p_coordinate) {
         super(p_id, p_name, p_coordinate);
+        this.setType("Balloon");
     }
 
     @Override
@@ -24,7 +26,6 @@ public class Balloon extends Aircraft{
                 coordinates.decreaseHeight(15);
                 break;
             default:
-                System.err.println("Unknown weather condition: " + weather);
                 throw new AssertionError(); //TODO ERROR DÜZENLEMESİ
                 
         }

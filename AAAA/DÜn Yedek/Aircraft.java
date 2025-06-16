@@ -1,3 +1,4 @@
+import aircraft.Flyable;
 
 public abstract class Aircraft extends Flyable{
     protected long id;

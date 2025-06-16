@@ -1,6 +1,8 @@
+import aircraft.Aircraft;
 
-public class Helicopter extends Aircraft{
-    public Helicopter(long p_id, String p_name, Coordinates p_coordinate) {
+public class Balloon extends Aircraft{
+    
+    public Balloon(long p_id, String p_name, Coordinates p_coordinate) {
         super(p_id, p_name, p_coordinate);
     }
 
@@ -10,28 +12,30 @@ public class Helicopter extends Aircraft{
         String weather = this.weatherTower.getWeather(coordinates);
         switch (weather) {
             case "SUN":
-                coordinates.increaseLongitude(10);
-                coordinates.increaseHeight(2);
+                coordinates.increaseLongitude(2);
+                coordinates.increaseHeight(4);
                 break;
             case "RAIN":
-                coordinates.increaseLongitude(5);
+                coordinates.decreaseHeight(5);
                 break;
             case "FOG":
-                coordinates.increaseLongitude(1);
+                coordinates.decreaseHeight(3);
                 break;
             case "SNOW":
-                coordinates.decreaseHeight(12);
+                coordinates.decreaseHeight(15);
                 break;
             default:
+                System.err.println("Unknown weather condition: " + weather);
                 throw new AssertionError(); //TODO ERROR DÜZENLEMESİ
+                
         }
 
-        LogManager.changeWeatherMessage(weather, "Helicopter", name, id);
+        LogManager.changeWeatherMessage(weather, "Balloon", name, id);
 
         if (coordinates.getHeight() <= 0)
         {
             this.weatherTower.unregister(this);
-            LogManager.logLanding("Helicopter", name, id);
+            LogManager.logLanding("Balloon", name, id);
         }
     }
 }

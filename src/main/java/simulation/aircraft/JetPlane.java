@@ -1,3 +1,4 @@
+package simulation.aircraft;
 
 public class JetPlane extends Aircraft{
     
