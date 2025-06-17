@@ -1,3 +1,4 @@
+package simulation.aircraft;
 
 class AircraftFactory
 {
@@ -23,7 +24,7 @@ class AircraftFactory
         switch (p_type.toLowerCase())
         {
             case "baloon":
-                return new Balloon(id, p_name, p_coordinates);
+                return new Baloon(id, p_name, p_coordinates);
             case "helicopter":
                 return new Helicopter(id, p_name, p_coordinates);
             case "jetplane":

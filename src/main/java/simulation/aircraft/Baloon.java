@@ -1,9 +1,10 @@
-import aircraft.Aircraft;
+package simulation.aircraft;
 
-public class Balloon extends Aircraft{
+public class Baloon extends Aircraft{
     
-    public Balloon(long p_id, String p_name, Coordinates p_coordinate) {
+    public Baloon(long p_id, String p_name, Coordinates p_coordinate) {
         super(p_id, p_name, p_coordinate);
+        this.setType("Baloon");
     }
 
     @Override
@@ -25,17 +26,16 @@ public class Balloon extends Aircraft{
                 coordinates.decreaseHeight(15);
                 break;
             default:
-                System.err.println("Unknown weather condition: " + weather);
                 throw new AssertionError(); //TODO ERROR DÜZENLEMESİ
                 
         }
 
-        LogManager.changeWeatherMessage(weather, "Balloon", name, id);
+        LogManager.changeWeatherMessage(weather, type, name, id);
 
         if (coordinates.getHeight() <= 0)
         {
             this.weatherTower.unregister(this);
-            LogManager.logLanding("Balloon", name, id);
+            LogManager.logLanding(type, name, id);
         }
     }
 }

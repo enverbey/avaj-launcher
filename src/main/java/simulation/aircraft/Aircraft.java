@@ -1,6 +1,6 @@
-package src.main.java.simulation.aircraft;
+package simulation.aircraft;
 
-public abstract class Aircraft extends Flyable{
+public abstract class Aircraft extends Flyable {
     protected long id;
     protected String name;
     protected String type;

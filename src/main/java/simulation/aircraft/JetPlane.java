@@ -4,6 +4,7 @@ public class JetPlane extends Aircraft{
     
     public JetPlane(long p_id, String p_name, Coordinates p_coordinate) {
         super(p_id, p_name, p_coordinate);
+        this.setType("JetPlane");
     }
 
     @Override
@@ -28,12 +29,12 @@ public class JetPlane extends Aircraft{
                 throw new AssertionError(); //TODO ERROR DÜZENLEMESİ
         }
 
-        LogManager.changeWeatherMessage(weather, "JetPlane", name, id);
+        LogManager.changeWeatherMessage(weather, type, name, id);
 
         if (coordinates.getHeight() <= 0)
         {
             this.weatherTower.unregister(this);
-            LogManager.logLanding("JetPLane", name, id);
+            LogManager.logLanding(type, name, id);
         }
     }
 }

@@ -1,4 +1,4 @@
-package src.main.java.simulation.core;
+package simulation.core;
 
 public class Coordinates{
     private int longitude; //Boylam

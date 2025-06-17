@@ -1,3 +1,5 @@
+package simulation.util;
+
 public class LogManager {
 
     public static final String DEFAULT_SUN_MESSAGE = "Lanet olsun çok sıcak!!";
