@@ -1,5 +1,6 @@
 package simulation.weather;
 
+import simulation.aircraft.Flyable;
 import java.util.ArrayList;
 import java.util.List;
 

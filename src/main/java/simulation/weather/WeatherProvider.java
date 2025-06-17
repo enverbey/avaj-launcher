@@ -1,5 +1,7 @@
 package simulation.weather;
 
+import simulation.core.Coordinates;
+
 public class WeatherProvider
 {
     private String[] weather;

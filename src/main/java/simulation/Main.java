@@ -1,4 +1,10 @@
-class Main {
+package simulation;
+
+import simulation.exception.InvalidFormatException;
+import simulation.core.Simulation;
+import java.io.IOException;
+
+public class Main {
     public static void main(String[] args)
     {
         String fileName = "scenario.txt";

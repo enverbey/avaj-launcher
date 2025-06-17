@@ -1,6 +1,8 @@
 package simulation.aircraft;
 
-public abstract class Aircraft extends Flyable {
+import simulation.core.Coordinates;
+
+public class Aircraft extends Flyable {
     protected long id;
     protected String name;
     protected String type;
@@ -13,22 +15,37 @@ public abstract class Aircraft extends Flyable {
         this.coordinates = p_coordinate;
     }
 
-    // Getters
-    public long getId() {
+    @Override
+    public long getID() {
         return id;
     }
+
+    @Override
     public String getName() {
         return name;
     }
+
+    @Override
     public Coordinates getCoordinates() {
         return coordinates;
     }
+
+    @Override
     public String getType() {
         return type;
     }
 
-    //Setters
+    //Setter for type
     protected void setType(String _type) {
         this.type = _type;
+    }
+
+    @Override
+    public abstract void updateConditions()
+    {
+        // This method should be implemented in subclasses
+        // to update the aircraft's conditions based on the weather.
+        // It is left abstract here to enforce implementation in subclasses.
+        System.out.println("Update conditions not implemented for " + type);
     }
 }

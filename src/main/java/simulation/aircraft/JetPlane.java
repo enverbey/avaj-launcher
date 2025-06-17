@@ -1,5 +1,8 @@
 package simulation.aircraft;
 
+import simulation.core.Coordinates;
+import simulation.util.LogManager;
+
 public class JetPlane extends Aircraft{
     
     public JetPlane(long p_id, String p_name, Coordinates p_coordinate) {

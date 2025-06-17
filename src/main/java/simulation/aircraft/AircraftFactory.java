@@ -1,6 +1,8 @@
 package simulation.aircraft;
 
-class AircraftFactory
+import simulation.core.Coordinates;
+
+public class AircraftFactory
 {
     private static long id = 0;
     private static AircraftFactory instance = null;
@@ -33,5 +35,6 @@ class AircraftFactory
                 throw new IllegalArgumentException("Unknown aircraft type: " + p_type);
         }
     }
+
 }
 //HER AİRCRAFT FARKLI ID YE SAHİP OLMALI

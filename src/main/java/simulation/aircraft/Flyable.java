@@ -1,6 +1,9 @@
 package simulation.aircraft;
 
-abstract public class Flyable {
+import simulation.core.Coordinates;
+import simulation.weather.WeatherTower;
+
+public abstract class Flyable {
     protected WeatherTower weatherTower;
 
     public abstract void updateConditions();

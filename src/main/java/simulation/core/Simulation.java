@@ -2,6 +2,9 @@ package simulation.core;
 
 import java.io.*;
 import java.util.*;
+import simulation.aircraft.FlyableData;
+import simulation.exception.InvalidFormatException;
+import simulation.weather.WeatherTower;
 
 public class Simulation {
 
@@ -90,5 +93,12 @@ public class Simulation {
 
     public List<FlyableData> getFlyables() {
         return flyables;
+    }
+
+    public void runSimulation() {
+
+        WeatherTower weatherTower = new WeatherTower();
+      
+      
     }
 }
