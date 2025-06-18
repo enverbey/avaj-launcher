@@ -1,6 +1,6 @@
-package simulation.aircraft;
+package src.main.java.simulation.aircraft;
 
-import simulation.core.Coordinates;
+import src.main.java.simulation.core.Coordinates;
 
 public class AircraftFactory
 {

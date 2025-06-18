@@ -1,7 +1,7 @@
-package simulation.aircraft;
+package src.main.java.simulation.aircraft;
 
-import simulation.core.Coordinates;
-import simulation.util.LogManager;
+import src.main.java.simulation.core.Coordinates;
+import src.main.java.simulation.util.LogManager;
 
 public class JetPlane extends Aircraft{
     

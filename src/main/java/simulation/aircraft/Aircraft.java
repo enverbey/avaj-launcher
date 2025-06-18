@@ -1,6 +1,6 @@
-package simulation.aircraft;
+package src.main.java.simulation.aircraft;
 
-import simulation.core.Coordinates;
+import src.main.java.simulation.core.Coordinates;
 
 public class Aircraft extends Flyable {
     protected long id;
@@ -41,7 +41,7 @@ public class Aircraft extends Flyable {
     }
 
     @Override
-    public abstract void updateConditions()
+    public void updateConditions()
     {
         // This method should be implemented in subclasses
         // to update the aircraft's conditions based on the weather.

@@ -1,4 +1,4 @@
-package simulation.util;
+package src.main.java.simulation.util;
 
 public class LogManager {
 

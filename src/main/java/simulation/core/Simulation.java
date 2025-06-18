@@ -1,10 +1,12 @@
-package simulation.core;
+package src.main.java.simulation.core;
 
 import java.io.*;
 import java.util.*;
-import simulation.aircraft.FlyableData;
-import simulation.exception.InvalidFormatException;
-import simulation.weather.WeatherTower;
+import src.main.java.simulation.aircraft.AircraftFactory;
+import src.main.java.simulation.aircraft.Flyable;
+import src.main.java.simulation.aircraft.FlyableData;
+import src.main.java.simulation.exception.InvalidFormatException;
+import src.main.java.simulation.weather.WeatherTower;
 
 public class Simulation {
 
@@ -49,7 +51,6 @@ public class Simulation {
 
             String type = parts[0];
             String name = parts[1];
-
             if (!isValidType(type)) {
                 throw new InvalidFormatException("Satır " + lineNumber + ": Geçersiz uçuş tipi: " + type);
             }
@@ -95,10 +96,29 @@ public class Simulation {
         return flyables;
     }
 
-    public void runSimulation() {
-
+    public void runSimulation()
+    {
         WeatherTower weatherTower = new WeatherTower();
-      
-      
+        AircraftFactory aircraftFactory = AircraftFactory.getInstance();
+        List<Flyable> flyArray = new ArrayList<>();
+        for (FlyableData flyable : flyables) {
+            Flyable newFlyable = aircraftFactory.newAircraft(flyable.type, flyable.name, new Coordinates(flyable.longitude, flyable.latitude, flyable.height));
+
+            flyArray.add(newFlyable);
+            newFlyable.registerTower(weatherTower);
+        }
+
+        for (int i=0; i<simulationCycles; i++)
+        {
+            weatherTower.changeWeather();
+        }
+    }
+
+    //Test function
+    public void printFlyables()
+    {
+        for (FlyableData flyable : flyables) {
+            System.out.println(flyable.type + "# " + flyable.name + " (" + flyable.longitude + ", " + flyable.latitude + ", " + flyable.height + ")");
+        }
     }
 }

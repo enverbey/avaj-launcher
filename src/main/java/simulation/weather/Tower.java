@@ -1,8 +1,9 @@
-package simulation.weather;
+package src.main.java.simulation.weather;
 
-import simulation.aircraft.Flyable;
 import java.util.ArrayList;
 import java.util.List;
+import src.main.java.simulation.aircraft.Flyable;
+import src.main.java.simulation.util.LogManager;
 
 public class Tower {
     private List<Flyable> observers;
@@ -29,7 +30,8 @@ public class Tower {
     }
 
     protected void conditionChanged() {
-        for (Flyable flyable : observers) {
+        List<Flyable> copy = new ArrayList<>(observers);
+        for (Flyable flyable : copy) {
             flyable.updateConditions();
         }
     }

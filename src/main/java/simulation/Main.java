@@ -1,13 +1,13 @@
-package simulation;
+package src.main.java.simulation;
 
-import simulation.exception.InvalidFormatException;
-import simulation.core.Simulation;
 import java.io.IOException;
+import src.main.java.simulation.core.Simulation;
+import src.main.java.simulation.exception.InvalidFormatException;
 
 public class Main {
     public static void main(String[] args)
     {
-        String fileName = "scenario.txt";
+        String fileName = "src/resources/scenario.txt";
         Simulation simulation = new Simulation();
         try {
             simulation.openFile(fileName);

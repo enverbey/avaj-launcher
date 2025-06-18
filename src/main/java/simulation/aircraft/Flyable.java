@@ -1,7 +1,7 @@
-package simulation.aircraft;
+package src.main.java.simulation.aircraft;
 
-import simulation.core.Coordinates;
-import simulation.weather.WeatherTower;
+import src.main.java.simulation.core.Coordinates;
+import src.main.java.simulation.weather.WeatherTower;
 
 public abstract class Flyable {
     protected WeatherTower weatherTower;

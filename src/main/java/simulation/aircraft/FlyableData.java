@@ -1,4 +1,4 @@
-package simulation.aircraft;
+package src.main.java.simulation.aircraft;
 
 public class FlyableData {
     public String type;
